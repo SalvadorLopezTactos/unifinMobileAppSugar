@@ -1,0 +1,145 @@
+
+<!--
+<div style="position: absolute; min-height: 100%; width: 100%; background: #fff; padding-top: 20px">
+
+	<span class="hello_world">Hello, World! Nueva vista custom</span>
+</div>
+-->
+
+<div class="box__edit {{#if isReadOnly}}box__edit_readonly{{/if}}">
+	<div class="scroll">
+		<div class="pad">
+
+			<!--Nombre del Cliente-->
+			<div class="field field--readonly">
+				<label class="field__label">Cliente</label>
+				<div class="field__controls field__controls--readonly">
+					{{strCliente}}
+				</div>
+			</div>
+
+			<!--Duración -->
+			<div class="field">
+				<label class="field__label">Duración (minutos)</label>
+				<div class="field__controls">
+					<span class="input-wrapper">
+						<!-- <input type="text" placeholder="" autocorrect="off" value="{{value}}"> -->
+						{{clearButton}}
+						<input type="text" class="_numeric duracion" autocorrect="off" pattern="[0-9]*" value="{{strNuevaDuracion}}">
+					</span>
+				</div>
+			</div>
+
+			<!--Duración -->
+			<div class="field">
+				<label class="field__label">Traslado (minutos)</label>
+				<div class="field__controls">
+					<span class="input-wrapper">
+						<!-- <input type="text" placeholder="" autocorrect="off" value="{{value}}"> -->
+						{{clearButton}}
+						<input type="text" class="_numeric traslado" autocorrect="off" pattern="[0-9]*" value="{{strNuevoTraslado}}">
+					</span>
+				</div>
+			</div>
+
+			<!--Referenciada -->
+		<div class="field field--bool">
+			<label class="field__label">Referenciada</label>
+			<div class="field__controls">
+				<!--
+				<input type="checkbox" class="checkbox_custom"{{#if value_check}} checked{{/if}}>
+				{{#if value_check}}
+				{{icon "edit.checkboxOn" additionalClass="checkbox-icon"}}
+				{{else}}
+				{{icon "edit.checkboxOff" additionalClass="checkbox-icon"}}
+				{{/if}}
+			-->
+			<input class="checkbox_default" type="checkbox" {{#if value_check}}checked{{/if}}></input>
+			</div>
+		</div>
+
+		<!--Acompañante -->
+		<div class="field field--readonly">
+			<label class="field__label">Acompañante</label>
+			<div class="field__controls field__controls--readonly">
+				{{strAcompaniante}}
+			</div>
+		</div>
+
+		<!--Objetivo -->
+		<div class="field field--readonly field--enum fieldObjetivo" style="pointer-events:none">
+			<label class="field__label">Objetivo</label>
+			<div class="field__controls field__controls--readonly">
+				<!-- <span class="placeholder">Required</span> -->
+
+				<select name="objetivo_list">
+        			<option value="1">PRESENTACION</option>
+        			<option value="2">EXPEDIENTE</option>
+        			<option value="4">COBRANZA</option>
+        			<option value="5">INCREMENTO</option>
+        			<option value="6">RENOVACION</option>
+        			<option value="7">VISITA OCULAR</option>
+        			<option value="8">COTEJO</option>
+        			<option value="9">OTRO</option>
+        			<option value="10">FIRMA DE CONTRATO</option>
+        			<option value="11">SEGURO</option>
+        			<option value="12">CIERRE</option>
+        			<option value=""></option>
+        		</select>
+				<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+			</div>
+			<div class="field__error-message errorObjetivo">Error. Este campo es obligatorio.</div>
+		</div>
+
+		<!--Estatus -->
+		<div class="field field--readonly field--enum fieldEstatus" style="pointer-events:none">
+			<label class="field__label">Estatus</label>
+			<div class="field__controls field__controls--readonly">
+				<!-- <span class="placeholder">Required</span> -->
+
+				<select name="estatus_list">
+        			<option value="1">REALIZADA</option>
+        			<option value="2">CANCELADA</option>
+        			<option value="3">REPROGRAMADA</option>
+        			<option value=""></option>
+        		</select>
+				<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+
+			</div>
+			<div class="field__error-message errorEstatus">Error. Este campo es obligatorio.</div>
+		</div>
+
+		<!--Resultado -->
+		<div class="field field--readonly field--enum fieldResultado" style="pointer-events:none">
+			<label class="field__label">Resultado</label>
+			<div class="field__controls field__controls--readonly">
+				<!-- <span class="placeholder">Required</span> -->
+
+				<select name="resultado_list">			
+					<option value="1">El cliente no estuvo presente, cita cancelada</option>
+        			<option value="2">No está interesado</option>
+        			<option value="3">Está interesado, pero no en este momento</option>
+        			<option value="4">Está Interesado. Se procede a generar expediente</option>
+        			<option value="5">Está Interesado. Se agendó otra visita</option>
+        			<option value="6">Está Interesado. Se recogió información</option>
+        			<option value="7">Se cerró una venta</option><option value=""></option>
+        			<option value='9'>Se logró la visita ocular parcialmente, se necesita una segunda cita</option>
+        			<option value='10'>Se logró la visita ocular completa</option>
+        			<option value='11'>Se logró cotejar parcialmente, se necesita una segunda cita</option>
+                	<option value='12'>Se logró cotejar todos los documentos</option>
+                	<option value='13'>Se logró completamente</option>
+                	<option value='14'>Aclaración de pagos</option>
+                	<option value='15'>Se logró parcialmente, se necesita una segunda cita</option>
+                	<option value='16'>No se aclararon los pagos</option>		
+        		</select>
+				<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+			</div>
+			<div class="field__error-message errorResultado">Error. Este campo es obligatorio.</div>
+		</div>
+
+		<div class="edit__footer">
+			<button tabindex="4" class="btn btn--danger btn--large delete fast-click-highlighted remove_btn" track="click:delete">Remover Cita</button>
+        </div>
+	</div>
+</div>
+</div>

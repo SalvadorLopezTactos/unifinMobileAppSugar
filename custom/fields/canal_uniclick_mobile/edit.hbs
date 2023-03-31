@@ -1,0 +1,14 @@
+<div class="field field--enum">
+	<div style="display:block;height: 1px;background-color: #9aa5ad;"></div>
+    <label class="field__label"  style="font-weight: bold;background-color:#7e878d;color:white">Producto Uniclick</label>
+    <div style="display:block;height: 1px;background-color: #9aa5ad;"></div>
+    <label class="field__label">Canal</label>
+    <div class="field__controls">
+			<select name="enum" class="canalUniclick">
+				{{#each lista_canal}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+	</div>
+</div>

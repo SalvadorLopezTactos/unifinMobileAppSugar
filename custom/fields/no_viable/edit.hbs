@@ -1,0 +1,575 @@
+<div id="main" style="display:{{vista}}">
+
+<!-- Leasing -->
+<div id="leasing">
+	<div style="display:block;height: 2px;background-color: #9aa5ad;"></div>
+	<!--<div class="field" style="background-color:#f5f5f5;">No viable </div>-->
+	<div class="field field--bool">
+		<label class="field__label">No viable Leasing</label>
+		<div class="field__controls">
+			<input class="checkbox_default" type="checkbox" id="checkbox_no_viable" {{#if productos.leasing.no_viable}}checked{{/if}}>
+		</div>
+	</div>
+	<div class="field field--enum hide noViable">
+		<label class="field__label">Razón de Lead no viable</label>
+		<div class="field__controls">
+			<select name="enum" id="razon_nv_leasing" class="razon_nv">
+				{{#each razones_ddw_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+
+	<!-- Fuera de Perfil (Razón)-->
+	<div class="field field--enum hide noViable">
+		<label class="field__label">Fuera de Perfil (Razón)</label>
+		<div class="field__controls">
+			<select name="enum" id="fuera_perfil_razon_leasing">
+				{{#each fuera_de_perfil_ddw_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Fuera de Perfil (Razón)-->
+
+	<!-- Condiciones financieras-->
+	<div class="field field--enum hide noViable condicionesFinancieras">
+		<label class="field__label">Condiciones financieras</label>
+		<div class="field__controls">
+			<select name="enum" id="cond_financieras_leasing">
+				{{#each razones_cf_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Condiciones financieras-->
+
+	<!-- ¿Quién?-->
+	<div class="field hide noViable competencia_quien">
+		<label class="field__label">¿Quién?</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.leasing.competencia_quien}}" id="competencia_quien_leasing">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+
+	<!--¿Por qué?-->
+	<div class="field hide noViable competencia_porque">
+		<label class="field__label">¿Por qué?</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.leasing.competencia_porque}}" id="competencia_porque_leasing">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+	<!-- fin Quien Por Que-->
+
+	<!-- ¿Que producto? -->
+	<div class="field field--enum hide noViable que_producto">
+		<label class="field__label">¿Qué producto?</label>
+		<div class="field__controls">
+			<select name="enum" id="que_producto_leasing">
+				{{#each no_producto_requiere_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin ¿Que producto?-->
+
+	<!-- Especifique producto !-->
+	<div class="field hide noViable especifique_producto">
+		<label class="field__label">Especifique producto</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.leasing.especifique_producto}}" id="especifique_producto_leasing">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+	<!-- Fin Especifique producto !-->
+
+	<!-- Razón No interesado -->
+	<div class="field field--enum hide noViable no_interesado">
+		<label class="field__label">Razón No se encuentra interesado</label>
+		<div class="field__controls">
+			<select name="enum" id="no_interesado_leasing">
+				{{#each tct_razon_ni_l_ddw_c_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Razón No interesado--> 
+</div>
+<!-- Fin Leasing -->
+
+<!-- Factoraje -->
+<div id="factoraje">
+	<div style="display:block;height: 2px;background-color: #9aa5ad;"></div>
+	<div class="field field--bool">
+		<label class="field__label">No viable Factoraje</label>
+		<div class="field__controls">
+			<input class="checkbox_default" type="checkbox" id="checkbox_no_viable_factoraje" {{#if productos.factoring.no_viable}}checked{{/if}}>
+		</div>
+	</div>
+	<div class="field field--enum hide noViable">
+		<label class="field__label">Razón de Lead no viable</label>
+		<div class="field__controls">
+			<select name="enum" id="razon_nv_factoraje" class="razon_nv">
+				{{#each razones_ddw_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+
+	<!-- Fuera de Perfil (Razón)-->
+	<div class="field field--enum hide noViable">
+		<label class="field__label">Fuera de Perfil (Razón)</label>
+		<div class="field__controls">
+			<select name="enum" id="fuera_perfil_razon_factoraje">
+				{{#each fuera_de_perfil_ddw_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Fuera de Perfil (Razón)-->
+
+	<!-- Condiciones financieras-->
+	<div class="field field--enum hide noViable condicionesFinancieras">
+		<label class="field__label">Condiciones financieras</label>
+		<div class="field__controls">
+			<select name="enum" id="cond_financieras_factoraje">
+				{{#each razones_cf_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Condiciones financieras-->
+
+	<!-- ¿Quién?-->
+	<div class="field hide noViable competencia_quien">
+		<label class="field__label">¿Quién?</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.factoring.competencia_quien}}" id="competencia_quien_factoraje">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+
+	<!--¿Por qué?-->
+	<div class="field hide noViable competencia_porque">
+		<label class="field__label">¿Por qué?</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.factoring.competencia_porque}}" id="competencia_porque_factoraje">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+	<!-- fin Quien Por Que-->
+
+	<!-- ¿Que producto? -->
+	<div class="field field--enum hide noViable que_producto">
+		<label class="field__label">¿Qué producto?</label>
+		<div class="field__controls">
+			<select name="enum" id="que_producto_factoraje">
+				{{#each no_producto_requiere_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin ¿Que producto?-->
+
+	<!-- Especifique producto !-->
+	<div class="field hide noViable especifique_producto">
+		<label class="field__label">Especifique producto</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.factoring.especifique_producto}}" id="especifique_producto_factoraje">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+	<!-- Fin Especifique producto !-->
+
+	<!-- Razón No interesado -->
+	<div class="field field--enum hide noViable no_interesado">
+		<label class="field__label">Razón No se encuentra interesado</label>
+		<div class="field__controls">
+			<select name="enum" id="no_interesado_factoraje">
+				{{#each tct_razon_ni_l_ddw_c_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Razón No interesado-->
+</div>
+<!-- Fin Factoraje -->
+
+<!-- Crédito -->
+<div id="credito">
+	<div style="display:block;height: 2px;background-color: #9aa5ad;"></div>
+	<div class="field field--bool">
+		<label class="field__label">No viable Crédito Automotriz</label>
+		<div class="field__controls">
+			<input class="checkbox_default" type="checkbox" id="checkbox_no_viable_credito" {{#if productos.credito.no_viable}}checked{{/if}}>
+		</div>
+	</div>
+	<div class="field field--enum hide noViable">
+		<label class="field__label">Razón de Lead no viable</label>
+		<div class="field__controls">
+			<select name="enum" id="razon_nv_credito" class="razon_nv">
+				{{#each razones_ddw_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+
+	<!-- Fuera de Perfil (Razón)-->
+	<div class="field field--enum hide noViable">
+		<label class="field__label">Fuera de Perfil (Razón)</label>
+		<div class="field__controls">
+			<select name="enum" id="fuera_perfil_razon_credito">
+				{{#each fuera_de_perfil_ddw_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Fuera de Perfil (Razón)-->
+
+	<!-- Condiciones financieras-->
+	<div class="field field--enum hide noViable condicionesFinancieras">
+		<label class="field__label">Condiciones financieras</label>
+		<div class="field__controls">
+			<select name="enum" id="cond_financieras_credito">
+				{{#each razones_cf_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Condiciones financieras-->
+
+	<!-- ¿Quién?-->
+	<div class="field hide noViable competencia_quien">
+		<label class="field__label">¿Quién?</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.credito.competencia_quien}}" id="competencia_quien_credito">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+
+	<!--¿Por qué?-->
+	<div class="field hide noViable competencia_porque">
+		<label class="field__label">¿Por qué?</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.credito.competencia_porque}}" id="competencia_porque_credito">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+	<!-- fin Quien Por Que-->
+
+	<!-- ¿Que producto? -->
+	<div class="field field--enum hide noViable que_producto">
+		<label class="field__label">¿Qué producto?</label>
+		<div class="field__controls">
+			<select name="enum" id="que_producto_credito">
+				{{#each no_producto_requiere_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin ¿Que producto?-->
+
+	<!-- Especifique producto !-->
+	<div class="field hide noViable especifique_producto">
+		<label class="field__label">Especifique producto</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.credito.especifique_producto}}" id="especifique_producto_credito">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+	<!-- Fin Especifique producto !-->
+
+	<!-- Razón No interesado -->
+	<div class="field field--enum hide noViable no_interesado">
+		<label class="field__label">Razón No se encuentra interesado</label>
+		<div class="field__controls">
+			<select name="enum" id="no_interesado_credito">
+				{{#each tct_razon_ni_l_ddw_c_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Razón No interesado-->
+</div>
+<!-- Fin Crédito -->
+
+<!-- Fleet -->
+<div id="fleet">
+	<div style="display:block;height: 2px;background-color: #9aa5ad;"></div>
+	<div class="field field--bool">
+		<label class="field__label">No viable Fleet</label>
+		<div class="field__controls">
+			<input class="checkbox_default" type="checkbox" id="checkbox_no_viable_fleet" {{#if productos.fleet.no_viable}}checked{{/if}}>
+		</div>
+	</div>
+	<div class="field field--enum hide noViable">
+		<label class="field__label">Razón de Lead no viable</label>
+		<div class="field__controls">
+			<select name="enum" id="razon_nv_fleet" class="razon_nv">
+				{{#each razones_ddw_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+
+	<!-- Fuera de Perfil (Razón)-->
+	<div class="field field--enum hide noViable">
+		<label class="field__label">Fuera de Perfil (Razón)</label>
+		<div class="field__controls">
+			<select name="enum" id="fuera_perfil_razon_fleet">
+				{{#each fuera_de_perfil_ddw_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Fuera de Perfil (Razón)-->
+
+	<!-- Condiciones financieras-->
+	<div class="field field--enum hide noViable condicionesFinancieras">
+		<label class="field__label">Condiciones financieras</label>
+		<div class="field__controls">
+			<select name="enum" id="cond_financieras_fleet">
+				{{#each razones_cf_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Condiciones financieras-->
+
+	<!-- ¿Quién?-->
+	<div class="field hide noViable competencia_quien">
+		<label class="field__label">¿Quién?</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.fleet.competencia_quien}}" id="competencia_quien_fleet">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+
+	<!--¿Por qué?-->
+	<div class="field hide noViable competencia_porque">
+		<label class="field__label">¿Por qué?</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.fleet.competencia_porque}}" id="competencia_porque_fleet">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+	<!-- fin Quien Por Que-->
+
+	<!-- ¿Que producto? -->
+	<div class="field field--enum hide noViable que_producto">
+		<label class="field__label">¿Qué producto?</label>
+		<div class="field__controls">
+			<select name="enum" id="que_producto_fleet">
+				{{#each no_producto_requiere_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin ¿Que producto?-->
+
+	<!-- Especifique producto !-->
+	<div class="field hide noViable especifique_producto">
+		<label class="field__label">Especifique producto</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.fleet.especifique_producto}}" id="especifique_producto_fleet">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+	<!-- Fin Especifique producto !-->
+
+	<!-- Razón No interesado -->
+	<div class="field field--enum hide noViable no_interesado">
+		<label class="field__label">Razón No se encuentra interesado</label>
+		<div class="field__controls">
+			<select name="enum" id="no_interesado_fleet">
+				{{#each tct_razon_ni_l_ddw_c_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Razón No interesado-->
+</div>
+<!-- Fin Fleet -->
+
+<!-- Uniclick -->
+<div id="uniclick">
+	<div style="display:block;height: 2px;background-color: #9aa5ad;"></div>
+	<div class="field field--bool">
+		<label class="field__label">No viable Uniclick</label>
+		<div class="field__controls">
+			<input class="checkbox_default" type="checkbox" id="checkbox_no_viable_uniclick" {{#if productos.uniclick.no_viable}}checked{{/if}}>
+		</div>
+	</div>
+	<div class="field field--enum hide noViable">
+		<label class="field__label">Razón de Lead no viable</label>
+		<div class="field__controls">
+			<select name="enum" id="razon_nv_uniclick" class="razon_nv">
+				{{#each razones_ddw_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+
+	<!-- Fuera de Perfil (Razón)-->
+	<div class="field field--enum hide noViable">
+		<label class="field__label">Fuera de Perfil (Razón)</label>
+		<div class="field__controls">
+			<select name="enum" id="fuera_perfil_razon_uniclick">
+				{{#each fuera_de_perfil_ddw_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Fuera de Perfil (Razón)-->
+
+	<!-- Condiciones financieras-->
+	<div class="field field--enum hide noViable condicionesFinancieras">
+		<label class="field__label">Condiciones financieras</label>
+		<div class="field__controls">
+			<select name="enum" id="cond_financieras_uniclick">
+				{{#each razones_cf_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Condiciones financieras-->
+
+	<!-- ¿Quién?-->
+	<div class="field hide noViable competencia_quien">
+		<label class="field__label">¿Quién?</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.uniclick.competencia_quien}}" id="competencia_quien_uniclick">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+
+	<!--¿Por qué?-->
+	<div class="field hide noViable competencia_porque">
+		<label class="field__label">¿Por qué?</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.uniclick.competencia_quien}}" id="competencia_porque_uniclick">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+	<!-- fin Quien Por Que-->
+
+	<!-- ¿Que producto? -->
+	<div class="field field--enum hide noViable que_producto">
+		<label class="field__label">¿Qué producto?</label>
+		<div class="field__controls">
+			<select name="enum" id="que_producto_uniclick">
+				{{#each no_producto_requiere_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin ¿Que producto?-->
+
+	<!-- Especifique producto !-->
+	<div class="field hide noViable especifique_producto">
+		<label class="field__label">Especifique producto</label>
+		<div class="field__controls">
+			<span class="input-wrapper">
+				<input type="text"  autocorrect="off" value="{{productos.uniclick.especifique_producto}}" id="especifique_producto_uniclick">
+				<i class="icondefault icon icon-remove clear-button"></i>
+			</span>
+		</div>
+	</div>
+	<!-- Fin Especifique producto !-->
+
+	<!-- Razón No interesado -->
+	<div class="field field--enum hide noViable no_interesado">
+		<label class="field__label">Razón No se encuentra interesado</label>
+		<div class="field__controls">
+			<select name="enum" id="no_interesado_uniclick">
+				{{#each tct_razon_ni_l_ddw_c_list}}
+				<option value="{{@key}}">{{this}}</option>
+				{{/each}}
+			</select>
+			<i class="icondefault icon icon-caret-down selectArrow-icon"></i>
+		</div>
+	</div>
+	<!--fin Razón No interesado-->
+</div>
+<div style="display:block;height: 2px;background-color: #9aa5ad;"></div>
+<!-- Fin Uniclick -->
+
+</div><!-- Fin main -->

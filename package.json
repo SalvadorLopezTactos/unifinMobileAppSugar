@@ -1,0 +1,14 @@
+{
+  "version": "0.1.0",
+  "sdkVersion": "55.0.705-1.4.2-2",
+  "description": "UnifinCRM starter kit",
+  "main": "sdk",
+  "dependencies": {
+    "@babel/core": "7.5.5",
+    "@babel/preset-env": "7.5.5",
+    "core-js": "2.6.9",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.26.2"
+  },
+  "devDependencies": {
+  }
+}

@@ -1,0 +1,59 @@
+{
+    "defaults": {
+        "native": {
+            "android": {
+                "packageName": "com.unifincrmapp.crm",
+                "appDownloadUrl": "",
+                "binaryName": "unifinCRM",
+                "signingKey": {
+                    "keystore": "./unifinCRMAndoridReleaseKey.jks",
+                    "storepass": "Un1f1n*cRm_Key",
+                    "keypass": "Un1f1n*cRm_Key",
+                    "alias": "appUnifinCRM"
+                }
+            },
+            "ios": {
+                "bundleId": "com.unifincrmapp.crm",
+                "appDownloadUrl": "",
+                "binaryName": "unifinCRM",
+                "teamId": "73H8T8733R"
+            }
+        },
+        "jsConfig": {
+            "appName": "Unifin CRM",
+            "productName": "Unifin CRM",
+            "brandName": "Unifin CRM",
+            "appBuild": "2",
+            "appVersion": "4.1.0",
+            "about": {
+                "privacy": "http://unifincrm.com/mobile_privacy",
+                "tos": "http://unifincrm.com/mobile_tos",
+                "support": "support.unifincrm.com",
+                "supportEmail": "support@unifincrm.com",
+                "copyrightText": "Copyright © 2018 unifinCRMCRM Inc. All Rights Reserved.",
+                "trademarkText": "unifinCRM and unifinCRMCRM are trademarks owned by unifinCRMCRM Inc. All other trademarks are the property of their respective owners."
+            },
+            "ui": {
+                "icons": {
+                    "actions": {
+                        "barcode": "icon icon-qrcode",
+                        "location": "icon icon-location-arrow",
+                        "hello": "icon icon-smile-o",
+                        "user": "icon icon-user"//fa fa-user
+                    }
+                }
+            }
+        }
+    },
+    "store": {
+        "native": {
+            "android": {
+                "signingKey": {
+                    "keystore": "",
+                    "storepass": "",
+                    "alias": ""
+                }
+            }
+        }
+    }
+}

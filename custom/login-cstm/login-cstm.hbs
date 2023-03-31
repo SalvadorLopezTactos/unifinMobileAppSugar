@@ -1,0 +1,88 @@
+{{!--
+/*
+ * Your installation or use of this SugarCRM file is subject to the applicable
+ * terms available at
+ * http://support.sugarcrm.com/Resources/Master_Subscription_Agreements/.
+ * If you do not agree to all of the applicable terms or do not have the
+ * authority to bind the entity as an authorized representative, then do not
+ * install or use this SugarCRM file.
+ *
+ * Copyright (C) SugarCRM Inc. All rights reserved.
+ */
+--}}
+<div class="page__login">
+    <div class="login__header">
+        {{#if settingsButtonVisible}}
+            <div  class="login__settings_div">
+                <a href="javascript:void(0)" class="login__settings_btn fast-click-highlighted" track="click:login-settings-btn">
+                    {{icon "menu.settings" additionalClass="icon-size-md"}}
+                </a>
+            </div>
+        {{/if}}
+        <h3 class="brand">{{brandName}}</h3>
+    </div>
+    <div class="login__body">
+
+    {{#if showLoginSettingsSection}}
+        <div id="login_settings_section" class="login__settings">
+            <div class="field">
+                <div class="settings__header">{{loginSettingsTitle}}</div>
+                <div class="settings__header__desc">{{loginSettingsDesc}}</div>
+            </div>
+            {{partial "login-settings-section" this}}
+        </div>
+    {{else}}
+        <form id="login_section" name="login_section" class="login-fields">
+            {{#each displayFields}}
+                {{field ../this}}
+            {{/each}}
+        </form>
+    {{/if}}
+        <!-- Inicia MFA-->
+    <form class="login-fields" name="mfaSection">
+      <span sfuuid="3">
+        <div class="field">
+          <label class="field__label">Ingresa el código de verificación:</label>
+          <div class="field__controls">
+            <span class="input-wrapper">
+              <input type="text" size="35" tabindex="1" id="input_code" name="mfaCode" value="" placeholder="Código de verificación"  autocapitalize="off" autocorrect="off" autocomplete="off">
+            </span>
+          </div>
+        </div>
+        <div id="contador" style="text-align:center">--</div>
+      </span>          
+    </form>
+    <!-- Termina MFA-->
+    </div>
+    <div class="login__footer {{#if showAttribution}}login__footer_show-attribution{{/if}}">
+
+        {{#if showLoginSettingsSection}}
+            <a href="javascript:void(0)" class="btn btn--primary btn--large continue_btn fast-click-highlighted" disabled="disabled" track="click:loginsettings_continue">{{str 'LBL_CONTINUE'}}</a>
+        {{else}}
+            <a href="javascript:void(0)" id="login_btn" class="btn btn--primary btn--large fast-click-highlighted" disabled="disabled" track="click:login">{{str 'LBL_LOGIN_BUTTON_TITLE'}}</a>
+        {{/if}}
+        <!-- Inicia MFA-->
+        <a href="javascript:void(0)" id="mfa_code" class="btn btn--primary btn--large fast-click-highlighted" name="cstm_mfa_form_button" title="Continuar">Continuar</a>
+        <a href="javascript:void(0)" id="mfa_new" class="btn btn--primary btn--large fast-click-highlighted" name="mfa_new_code_button" title="Nuevo Código">Nuevo Código</a>
+        <!-- Termina MFA-->
+    </div>
+  </div>
+</div>
+<div class="login__links">
+    {{#if showAttribution}}
+        <div class="box__copyright">
+            <span class="copyright__text">powered by</span>
+            <span class="copyright__logo">
+                {{partial "sugarcrm-copyright-logo" this}}
+            </span>
+            <span class="copyright__version">v. {{productVersion}}</span>
+        </div>
+    {{else}}
+        <div class="version">v. {{productVersion}}</div>
+    {{/if}}
+    <a href="{{tosLink}}" class="legal-link login-links__link fast-click-highlighted" track="click:tos">{{str 'LNK_TERMS_OF_USE'}}</a>
+    <i class="separator"></i>
+    <a href="javascript:void(0)" class="about-link login-links__link fast-click-highlighted">{{str 'LNK_ABOUT'}}</a>
+    <i class="separator"></i>
+    <a href="{{privacyLink}}" class="legal-link login-links__link fast-click-highlighted" track="click:privacy">{{str 'LNK_PRIVACY_POLICY'}}</a>
+</div>
